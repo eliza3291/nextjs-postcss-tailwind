@@ -19,10 +19,9 @@ Finally, run the development server:
 npm run dev
 ```
 
-Error should appear in the terminal:
+Error should appear in the terminal or in the browser:
 
 ```bash
-error - ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[3].oneOf[8].use[1]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[3].oneOf[8].use[2]!./styles/globals.css
 Error: tailwindcss is not a PostCSS plugin
 ```
 
@@ -32,13 +31,13 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 To learn more about how to configure Next.js, Tailwind, Postcss and it's plugins:
 
-- [Next.js Customizing PostCSS Config](https://nextjs.org/docs/advanced-features/customizing-postcss-config) - Next.js explicit recommend to avoid `require`.
-- [postcss-each](https://github.com/madyankin/postcss-each#beforeeach) - A PostCSS plugin to iterate through values.
+- [Next.js Customizing PostCSS Config](https://nextjs.org/docs/advanced-features/customizing-postcss-config) - Next.js explicit recommend to avoid `require()`.
+- [postcss-each](https://github.com/madyankin/postcss-each#beforeeach) - A PostCSS plugin to iterate through values recommends to use beforeEach to keep import order of the plugins.
 - [Tailwind and Postcss-each](https://github.com/tailwindlabs/tailwindcss/discussions/7362#discussioncomment-2132610) - Tailwindcss plugin should be called before each iteration.
 
 ## Expected behaviour
 
-Tailwindcss plugin is found when called inside `beforeEach` without `require` as defined in the Next.js documentation.
+Tailwindcss plugin is found when called inside `beforeEach` without `require()` as defined in the Next.js documentation.
 
 ## Workaround in the meantime
 
