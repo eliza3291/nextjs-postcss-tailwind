@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@each $color in (red, fuchsia, violet, cyan, blue, lime, green) {
+    .test-bg--$(color) { @apply bg-$(color)-400 }
+    .test-bg--$(color)::after { border-top-color: var(--color-$(color)-400); }
+}
