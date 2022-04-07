@@ -4,7 +4,7 @@ First, create a conda environment in the root directory of the application and a
 
 ```bash
 conda create --yes --prefix ./.conda-env --file conda.txt
-conda activate ./.conda-env
+conda activate .conda-env
 ```
 
 Second, install dependencies:
